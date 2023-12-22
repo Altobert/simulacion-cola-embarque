@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tda_gruaCarga.h"
+#include "tda_colaCarga.h"
 
 // La funcion debe retornar, con cierta probabilidad, un 1 si se puede embarcar o un 0 si no se puede embarcar
 int embarcar(int probabilidad){
@@ -26,8 +26,7 @@ colaEmbarques * crearColaEmbarques(int n){
     }
     cola->identificador = 0;
     cola->instanteLlegada = 0;
-    cola->estado = 0;
-    cola->siguiente = NULL;
+    
     return cola;
 }
 
