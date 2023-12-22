@@ -15,3 +15,20 @@ int embarcar(int probabilidad){
     }
     return embarcar;
 }
+
+// Crear cola de embarque
+colaEmbarques * crearColaEmbarques(int n){
+    colaEmbarques *cola = NULL;
+    cola = (colaEmbarques *)malloc(sizeof(colaEmbarques));
+    if(cola == NULL){
+        printf("No se pudo crear la cola de embarques");
+        exit(1);
+    }
+    cola->identificador = 0;
+    cola->instanteLlegada = 0;
+    cola->estado = 0;
+    cola->siguiente = NULL;
+    return cola;
+}
+
+

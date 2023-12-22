@@ -15,7 +15,7 @@ typedef struct colaEmbarques{
     int instanteLlegada; //instante de llegada a la cola > a cero o menor igual que el valor que el tiempo de la simulacion        
     int estado;          // 0: pendiente, 1: realizado
     struct colaEmbarques *siguiente;
-}colaEmbarques;
+};
 
 /*
 En cada unidad de tiempo se debe verificar si se deben embarcar las cargas,
@@ -55,6 +55,8 @@ bool embarcar(int probabilidad);
  * @return Un puntero a la cola de embarques creada.
  */
 colaEmbarques * crearColaEmbarques(int n);
+
+   
 
 
 
