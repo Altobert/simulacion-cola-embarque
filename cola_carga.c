@@ -108,8 +108,7 @@ void main() {
 
         c = desencolar();
         
-        printf("desencola : %d ",c.id);
-        //printf("carga embarcada: %d\n", total_cargas_embarcadas);
+        printf("desencola : %d ",c.id);        
 
         c.tiempo_embarque = tiempo_actual;
 
