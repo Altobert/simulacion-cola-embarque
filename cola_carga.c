@@ -34,8 +34,8 @@ void encolar(struct carga c) {
   } else {
     fin -> sig = nuevo;
   }
-
   fin = nuevo;
+
 
 }
 
@@ -75,12 +75,12 @@ bool embarcar(float probabilidad) {
 void main() {
 
   // Variables 
-  int tiempo_total = 1000;
-  int intervalo_llegada = 10;
-  float prob_embarque = 0.1;
+  int tiempo_total = 3000;
+  int intervalo_llegada = 1;
+  float prob_embarque = 0.5;
 
   int tiempo_actual = 0;
-  int num_cargas = 50;
+  int num_cargas = 2000;
   int total_embarcadas = 0;
   float suma_tiempos_cola = 0;
 
@@ -95,6 +95,8 @@ void main() {
       c.id = num_cargas;
       c.tiempo_llegada = tiempo_actual;
 
+      printf("encola : %d ",c.id);
+
       encolar(c);
       num_cargas++;
     }
@@ -105,6 +107,9 @@ void main() {
       while (frente != NULL) {
 
         c = desencolar();
+        
+        printf("desencola : %d ",c.id);
+        //printf("carga embarcada: %d\n", total_cargas_embarcadas);
 
         c.tiempo_embarque = tiempo_actual;
 
@@ -158,7 +163,7 @@ void main() {
   // Estadísticas
   float promedio_cola = suma_tiempos_cola / total_embarcadas;
 
-  printf("Resumen:\n");
+  printf("Resumen General:\n");
   printf("Tiempos en cola: %.2f (prom.)\n", promedio_cola);
   printf("Total embarcadas: %d\n", total_embarcadas);
 
